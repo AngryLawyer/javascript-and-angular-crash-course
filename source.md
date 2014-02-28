@@ -22,7 +22,27 @@
 
 -----
 
-# Dynamic types - a boon and a curse
+# Dynamic, weak types
+## a boon and a curse
+
+Types in Javascript are dynamic - we don't care what goes into a slot.
+
+    !javascript
+    function logMe(lol) {
+      console.log(lol);
+    }
+
+    logMe(7);
+    logMe("a string");
+
+    var x = 5;
+    x = "five"
+
+-----
+
+This gives flexibility at the cost of having to make sure you don't call a function with silliness.
+
+Types are also weak - the runtime will try and figure something out for a lot of cases. This is often mad.
 
     !javascript
 
