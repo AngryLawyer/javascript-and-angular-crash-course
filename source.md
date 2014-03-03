@@ -123,7 +123,7 @@ Types are also weak - the runtime will try and figure something out for a lot of
 
 * Make sure you've got Node and NPM installed
 * Make a new directory and cd into it
-* npm install yo (might be npm install -g angular)
+* npm install yo (might be npm install -g yo)
 * npm install generator-angular
 * yo angular testApp - follow the instructions, ignore the hipsterisms.
 * npm install
