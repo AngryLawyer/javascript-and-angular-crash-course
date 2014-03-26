@@ -123,7 +123,7 @@ Types are also weak - the runtime will try and figure something out for a lot of
 
 * Make sure you've got Node and NPM installed
 * Make a new directory and cd into it
-* npm install yo (might be npm install -g yo)
+* sudo npm install -g yo
 * npm install generator-angular
 * yo angular testApp - follow the instructions, ignore the hipsterisms.
 * npm install
@@ -334,7 +334,8 @@ Add a new folder called services. Add a new file called services.js. Add it to i
 Now, update our controller.
 
     !javascript
-    app.controller('BlinkController', ['$scope', '$timeout', 'BlinkSpeedManager', function($scope, $timeout, BlinkSpeedManager) {
+    app.controller('BlinkController', ['$scope', '$timeout',
+      'BlinkSpeedManager', function($scope, $timeout, BlinkSpeedManager) {
       $scope.showing = true;
 
       $scope.toggleTimeout = function () {
@@ -366,8 +367,8 @@ And the directive
     app.directive('speedMunger', [function () {
       return {
         restrict: 'E',
-        transclude: true,
-        template: '<input ng-model="speed"></span>',
+        replace: true,
+        template: '<input ng-model="speed"/>',
         controller: 'SpeedMungerController',
         scope: {
         }
